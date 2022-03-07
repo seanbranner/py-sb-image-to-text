@@ -58,25 +58,20 @@ class CaptureImage:
 
     def get_team_tokens(self):
         img = ImageGrab.grab(bbox=(1010 + 1920, 40, 1090 + 1920, 80), all_screens=True)
-        img.show()
         return img
 
     def get_energy(self):
         img = ImageGrab.grab(bbox=(600 + 1920, 40, 730 + 1920, 80), all_screens=True)
-        img.show()
         return img
 
     def get_doom_tower_keys(self):
         img = ImageGrab.grab(bbox=(1340 + 1920, 40, 1460 + 1918, 80), all_screens=True)
-        img.show()
         return img
 
     def get_hydra_clan_boss_keys(self):
         img = ImageGrab.grab(bbox=(1105 + 1920, 40, 1200 + 1930, 80), all_screens=True)
-        img.show()
         return img
 
     def get_demon_lord_clan_boss_keys(self):
         img = ImageGrab.grab(bbox=(1338 + 1920, 40, 1460 + 1918, 80), all_screens=True)
-        img.show()
         return img

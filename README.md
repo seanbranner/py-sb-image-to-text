@@ -1,7 +1,7 @@
 # Image to text tool.
 
 
-# **PyStashPull**
+# **PySbImageToText**
 ![Script Example](linke to image goes here)
 
 ## Table of Contents
@@ -43,3 +43,4 @@ Relevent questions and asnwers:
 
 
 ### AUTHOR NOTES
+eventually I have to add multi screen detection
