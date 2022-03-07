@@ -49,7 +49,7 @@ class CaptureImage:
 
     def __init__(self,):
         sample = None
-        multi_screen = is_multi_screen()
+        # multi_screen = is_multi_screen()
 
 
     def get_energy(self):
