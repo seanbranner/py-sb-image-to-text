@@ -1,4 +1,3 @@
 .idea
 /bkp/
-/py_sb_image_to_text/resources/Tesseract-OCR/*
-/py_sb_image_to_text/resources/Tesseract-OCR/
+/venv_py_sb_image_to_text/

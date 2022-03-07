@@ -33,7 +33,7 @@ class TestPySbImageToText(unittest.TestCase):
         self.assertEqual(expected, actual)
 
     def test_arena_tokens_real(self):
-        expected = "4/10"
+        expected = "1/10"
 
         image_object = py_sb_capture_screen.CaptureImage()
         taoken_image = image_object.get_tokens()

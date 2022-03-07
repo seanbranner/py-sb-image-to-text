@@ -17,7 +17,7 @@ class TestPySbImageToText(unittest.TestCase):
         self.assertEqual(True, True)
 
     def test_get_tokens_image(self):
-        captured_object = py_sb_capture_screen.CaptureImage(self.arena_tokens_path)
+        captured_object = py_sb_capture_screen.CaptureImage()
         captured_object.get_tokens()
         self.assertEqual(True, True)
 
