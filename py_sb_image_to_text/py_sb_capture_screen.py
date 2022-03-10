@@ -47,31 +47,62 @@ pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tessera
 
 class CaptureImage:
 
-    def __init__(self,):
+    def __init__(self,multi_screen=False):
         sample = None
-        # multi_screen = is_multi_screen()
+        self.multi_screen = multi_screen
+        
+    def get_adjusted_coordinates(self,coordinate):
+        if self.multi_screen:
+            return (coordinate[0]+1920,coordinate[1])
+        return coordinate
 
     def get_tokens(self):
-        img = ImageGrab.grab(bbox=(820+1920, 40, 900 + 1920, 80), all_screens=True)
+        top_left_corner = (820, 40)
+        bottom_right_corner = (900, 80)
+        img = self.grab_and_return_image(top_left_corner,bottom_right_corner)
         # img.show()
         return img
 
+    def grab_and_return_image(self,top_left_coordinate,bottom_right_coordinate):
+        top_left_corner = self.get_adjusted_coordinates(top_left_coordinate)
+        bottom_right_corner = self.get_adjusted_coordinates(bottom_right_coordinate)
+        img = ImageGrab.grab(
+            bbox=(
+                top_left_corner[0],
+                top_left_corner[1],
+                bottom_right_corner[0],
+                bottom_right_corner[1]
+            ),
+            all_screens=True
+        )
+        return img
+
     def get_team_tokens(self):
-        img = ImageGrab.grab(bbox=(1010 + 1920, 40, 1090 + 1920, 80), all_screens=True)
+        top_left_corner = (1010, 40)
+        bottom_right_corner = (1090, 80)
+        img = self.grab_and_return_image(top_left_corner,bottom_right_corner)
         return img
 
     def get_energy(self):
-        img = ImageGrab.grab(bbox=(600 + 1920, 40, 730 + 1920, 80), all_screens=True)
+        top_left_corner = (600, 40)
+        bottom_right_corner = (730, 80)
+        img = self.grab_and_return_image(top_left_corner,bottom_right_corner)
         return img
 
     def get_doom_tower_keys(self):
-        img = ImageGrab.grab(bbox=(1340 + 1920, 40, 1460 + 1918, 80), all_screens=True)
+        top_left_corner = (1340, 40)
+        bottom_right_corner = (1460, 80)
+        img = self.grab_and_return_image(top_left_corner,bottom_right_corner)
         return img
 
     def get_hydra_clan_boss_keys(self):
-        img = ImageGrab.grab(bbox=(1105 + 1920, 40, 1200 + 1930, 80), all_screens=True)
+        top_left_corner = (1105, 40)
+        bottom_right_corner = (1200, 80)
+        img = self.grab_and_return_image(top_left_corner,bottom_right_corner)
         return img
 
     def get_demon_lord_clan_boss_keys(self):
-        img = ImageGrab.grab(bbox=(1338 + 1920, 40, 1460 + 1918, 80), all_screens=True)
+        top_left_corner = (1338, 40)
+        bottom_right_corner = (1460, 80)
+        img = self.grab_and_return_image(top_left_corner,bottom_right_corner)
         return img
