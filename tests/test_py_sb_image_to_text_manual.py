@@ -18,13 +18,6 @@ class TestPySbImageToText(unittest.TestCase):
         actual = example_hello_world_img_object.get_image_text()
         self.assertEqual(expected, actual)
 
-    def test_reading_arena_tokens(self):
-        expected = "10/10"
-
-        example_arena_tokens_img_object = py_sb_image_to_text.TextImage(self.example_bastion_arena_tokens_img_path)
-        actual = example_arena_tokens_img_object.get_image_text()
-        self.assertEqual(expected, actual)
-
     def test_campaign_energy(self):
         expected = "334/130"
 
@@ -33,9 +26,9 @@ class TestPySbImageToText(unittest.TestCase):
         self.assertEqual(expected, actual)
 
     def test_arena_tokens_real(self):
-        expected = "10/10"
+        expected = "3/10"
 
-        image_object = py_sb_capture_screen.CaptureImage(multi_screen=False)
+        image_object = py_sb_capture_screen.CaptureImage(multi_screen=True)
         taoken_image = image_object.get_tokens()
 
         example_campaign_energy_img_object = py_sb_image_to_text.TextImage()
@@ -47,7 +40,7 @@ class TestPySbImageToText(unittest.TestCase):
     def test_team_arena_tokens_real(self):
         expected = "0/10"
 
-        image_object = py_sb_capture_screen.CaptureImage()
+        image_object = py_sb_capture_screen.CaptureImage(multi_screen=True)
         token_object = image_object.get_team_tokens()
 
         example_campaign_energy_img_object = py_sb_image_to_text.TextImage()
@@ -57,9 +50,9 @@ class TestPySbImageToText(unittest.TestCase):
         self.assertEqual(expected, actual)
 
     def test_energy_real(self):
-        expected = "7/130"
+        expected = "42/130"
 
-        image_object = py_sb_capture_screen.CaptureImage()
+        image_object = py_sb_capture_screen.CaptureImage(multi_screen=True)
         token_object = image_object.get_energy()
 
         example_campaign_energy_img_object = py_sb_image_to_text.TextImage()
@@ -69,9 +62,9 @@ class TestPySbImageToText(unittest.TestCase):
         self.assertEqual(expected, actual)
 
     def test_doom_tower_keys_real(self):
-        expected = "10/10"
+        expected = "0/10"
 
-        image_object = py_sb_capture_screen.CaptureImage()
+        image_object = py_sb_capture_screen.CaptureImage(multi_screen=True)
         token_object = image_object.get_doom_tower_keys()
 
         example_campaign_energy_img_object = py_sb_image_to_text.TextImage()
@@ -81,9 +74,9 @@ class TestPySbImageToText(unittest.TestCase):
         self.assertEqual(expected, actual)
 
     def test_clan_boss_keys(self):
-        expected = "2/2"
+        expected = "0/2"
 
-        image_object = py_sb_capture_screen.CaptureImage()
+        image_object = py_sb_capture_screen.CaptureImage(multi_screen=True)
         token_object = image_object.get_demon_lord_clan_boss_keys()
 
         example_campaign_energy_img_object = py_sb_image_to_text.TextImage()
@@ -95,7 +88,7 @@ class TestPySbImageToText(unittest.TestCase):
     def test_hybdra_boss_keys(self):
         expected = "3/3"
 
-        image_object = py_sb_capture_screen.CaptureImage()
+        image_object = py_sb_capture_screen.CaptureImage(multi_screen=True)
         token_object = image_object.get_hydra_clan_boss_keys()
 
         example_campaign_energy_img_object = py_sb_image_to_text.TextImage()

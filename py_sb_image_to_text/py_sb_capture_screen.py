@@ -57,10 +57,10 @@ class CaptureImage:
         return coordinate
 
     def get_tokens(self):
-        top_left_corner = (820, 40)
-        bottom_right_corner = (900, 80)
+        top_left_corner = (823, 40)
+        bottom_right_corner = (900, 75)
         img = self.grab_and_return_image(top_left_corner,bottom_right_corner)
-        # img.show()
+        img.show()
         return img
 
     def grab_and_return_image(self,top_left_coordinate,bottom_right_coordinate):
@@ -91,8 +91,9 @@ class CaptureImage:
 
     def get_doom_tower_keys(self):
         top_left_corner = (1340, 40)
-        bottom_right_corner = (1460, 80)
+        bottom_right_corner = (1455, 80)
         img = self.grab_and_return_image(top_left_corner,bottom_right_corner)
+        img.show()
         return img
 
     def get_hydra_clan_boss_keys(self):

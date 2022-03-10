@@ -28,10 +28,10 @@ class TextImage:
     def get_image_text(self):
         print('running image to text')
         self.invert_image(self.image_object)
+
         return pytesseract.image_to_string(self.image_object).strip()
 
     def invert_image(self, img):
-        size = width, height = img.size
         img = ImageOps.invert(img.convert('RGB'))
         # img.show()
 
