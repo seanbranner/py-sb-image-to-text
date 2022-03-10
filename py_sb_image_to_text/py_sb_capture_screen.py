@@ -48,22 +48,14 @@ pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tessera
 class CaptureImage:
 
     def __init__(self,multi_screen=False):
-        sample = None
         self.multi_screen = multi_screen
         
     def get_adjusted_coordinates(self,coordinate):
         if self.multi_screen:
-            return (coordinate[0]+1920,coordinate[1])
+            return coordinate[0] + 1920, coordinate[1]
         return coordinate
 
-    def get_tokens(self):
-        top_left_corner = (823, 40)
-        bottom_right_corner = (900, 75)
-        img = self.grab_and_return_image(top_left_corner,bottom_right_corner)
-        img.show()
-        return img
-
-    def grab_and_return_image(self,top_left_coordinate,bottom_right_coordinate):
+    def grab_and_return_image(self, top_left_coordinate, bottom_right_coordinate):
         top_left_corner = self.get_adjusted_coordinates(top_left_coordinate)
         bottom_right_corner = self.get_adjusted_coordinates(bottom_right_coordinate)
         img = ImageGrab.grab(
@@ -75,6 +67,13 @@ class CaptureImage:
             ),
             all_screens=True
         )
+        return img
+
+    def get_tokens(self):
+        top_left_corner = (823, 40)
+        bottom_right_corner = (900, 75)
+        img = self.grab_and_return_image(top_left_corner,bottom_right_corner)
+        img.show()
         return img
 
     def get_team_tokens(self):

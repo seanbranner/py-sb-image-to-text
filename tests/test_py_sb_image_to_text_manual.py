@@ -28,7 +28,7 @@ class TestPySbImageToText(unittest.TestCase):
     def test_arena_tokens_real(self):
         expected = "3/10"
 
-        image_object = py_sb_capture_screen.CaptureImage(multi_screen=True)
+        image_object = py_sb_capture_screen.CaptureImage(multi_screen=False)
         taoken_image = image_object.get_tokens()
 
         example_campaign_energy_img_object = py_sb_image_to_text.TextImage()
