@@ -73,7 +73,6 @@ class CaptureImage:
         top_left_corner = (823, 40)
         bottom_right_corner = (900, 75)
         img = self.grab_and_return_image(top_left_corner,bottom_right_corner)
-        img.show()
         return img
 
     def get_team_tokens(self):
@@ -92,7 +91,6 @@ class CaptureImage:
         top_left_corner = (1340, 40)
         bottom_right_corner = (1455, 80)
         img = self.grab_and_return_image(top_left_corner,bottom_right_corner)
-        img.show()
         return img
 
     def get_hydra_clan_boss_keys(self):
